@@ -3,16 +3,13 @@ package com.example.warehouse.controller;
 import com.example.warehouse.controller.dto.*;
 //import com.example.warehouse.dao.BuyRepository;
 //import com.example.warehouse.dao.entity.User;
+import com.example.warehouse.dao.entity.Product;
 import com.example.warehouse.service.*;
-import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 
-import org.springframework.boot.web.servlet.WebListenerRegistrar;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.*;
@@ -32,9 +29,16 @@ public class ProductController {
     }
 
     @GetMapping("/products")
-    private List<ProductRecordRequest> getAllProducts() {
+    private List<Product> getAllProducts() {
         return productService.getAllProducts();
     }
+
+    @DeleteMapping(value = {"/deleteProduct/{productId}"})
+    public void delete(@PathVariable Integer productId)
+    {
+        productService.delete(productId);
+    }
+
     /*
     @PostMapping("/category")
     private List<ProductRecordRequest> getProductsByCategory(@RequestParam MultiValueMap<String,String> paramMap){

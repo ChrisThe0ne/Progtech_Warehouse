@@ -37,7 +37,7 @@ public class Product {
         );
     }
 
-    public ProductRecordRequest toProductRequest() {
-        return new ProductRecordRequest(name,category, price, quantity, description);
+    public Product toProductRequest() {
+        return new Product(id, name,category, price, quantity, description);
     }
 }

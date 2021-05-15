@@ -4,10 +4,8 @@ import com.example.warehouse.controller.dto.*;
 import com.example.warehouse.dao.*;
 import com.example.warehouse.dao.entity.*;
 import lombok.*;
-import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.stereotype.Service;
-import java.time.*;
-import java.time.temporal.ChronoUnit;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -30,19 +28,23 @@ public class ProductService implements ProductServiceInterface{
     }
 
     @Override
-    public List<ProductRecordRequest> getAllProducts() {
+    public List<Product> getAllProducts() {
         return productRepository.findAll().stream().map(Product::toProductRequest).collect(Collectors.toList());
     }
 
-
     @Override
-    public List<ProductRecordRequest> getProductsByName(String name) {
+    public List<Product> getProductsByName(String name) {
         return productRepository.getAllByNameContaining(name).stream().map(Product::toProductRequest).collect(Collectors.toList());
     }
 
     @Override
     public List<ProductRecordRequest> getProductsByCategory(String category) {
         return null;
+    }
+    @Override
+    public void delete(Integer productId) {
+        Product temp = productRepository.getProductById(productId);
+        productRepository.delete(temp);
     }
 
 }

@@ -15,4 +15,6 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
     */
     List<Product> getAllByNameContaining(String name);
 
+    Product getProductById(Integer guestId);
+
 }
