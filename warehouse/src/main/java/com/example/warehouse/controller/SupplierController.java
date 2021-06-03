@@ -21,7 +21,7 @@ public class SupplierController {
     //private final SessionService sessionService;
     //private final BuyService buyService;
 
-    @PostMapping(path = "/addsupplier", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
+    @PostMapping(path = "/addSupplier", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
     public void addsupplier(SupplierRecordRequest supplierRequest, HttpServletResponse response) throws IOException {
         supplierService.addSupplier(supplierRequest);
     }
@@ -31,7 +31,7 @@ public class SupplierController {
         return supplierService.getAllSuppliers();
     }
 
-    @DeleteMapping(value = {"/deleteProduct/{supplierId}"})
+    @DeleteMapping(value = {"/deleteSupplier/{supplierId}"})
     public void delete(@PathVariable Integer supplierId)
     {
         supplierService.delete(supplierId);

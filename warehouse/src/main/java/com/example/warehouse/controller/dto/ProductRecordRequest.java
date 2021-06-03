@@ -1,5 +1,6 @@
 package com.example.warehouse.controller.dto;
 
+import com.example.warehouse.dao.entity.Category;
 import com.example.warehouse.dao.entity.Supplier;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
@@ -15,7 +16,7 @@ public class ProductRecordRequest {
 
     @NonNull
     @ApiModelProperty(required = true, example = "Test category")
-    private String category;
+    private Category category;
 
     @NonNull
     @ApiModelProperty(required = true, example = "9999")

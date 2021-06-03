@@ -1,9 +1,7 @@
 package com.example.warehouse.controller;
 
 import com.example.warehouse.controller.dto.*;
-//import com.example.warehouse.dao.BuyRepository;
-//import com.example.warehouse.dao.entity.User;
-import com.example.warehouse.dao.entity.Product;
+import com.example.warehouse.dao.entity.Category;
 import com.example.warehouse.service.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,26 +15,26 @@ import java.util.*;
 @RestController
 @RequiredArgsConstructor
 @Slf4j
-public class ProductController {
+public class CategoryController {
 
-    private final ProductService productService;
+    private final CategoryService categoryService;
     //private final SessionService sessionService;
     //private final BuyService buyService;
 
-    @PostMapping(path = "/addProduct", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
-    public void addproduct(ProductRecordRequest productRequest, HttpServletResponse response) throws IOException {
-        productService.addProduct(productRequest);
+    @PostMapping(path = "/addCategory", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
+    public void addCategory(CategoryRecordRequest categoryRequest, HttpServletResponse response) throws IOException {
+        categoryService.addCategory(categoryRequest);
     }
 
-    @GetMapping("/products")
-    private List<Product> getAllProducts() {
-        return productService.getAllProducts();
+    @GetMapping("/categories")
+    private List<Category> getAllCategories() {
+        return categoryService.getAllCategories();
     }
 
-    @DeleteMapping(value = {"/deleteProduct/{productId}"})
-    public void delete(@PathVariable Integer productId)
+    @DeleteMapping(value = {"/deleteCategory/{categoryId}"})
+    public void delete(@PathVariable Integer categoryId)
     {
-        productService.delete(productId);
+        categoryService.delete(categoryId);
     }
 
     /*
