@@ -24,6 +24,9 @@ public class Product {
 
     private Integer quantity;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Supplier supplier; //supplier_id mező lesz az adatbázisban
+
     private String description;
 
     public static Product addProduct(ProductRecordRequest request) {
@@ -33,11 +36,12 @@ public class Product {
                 request.getCategory(),
                 request.getPrice(),
                 request.getQuantity(),
+                request.getSupplier(),
                 request.getDescription()
         );
     }
 
     public Product toProductRequest() {
-        return new Product(id, name,category, price, quantity, description);
+        return new Product(id, name,category, price, quantity, supplier, description);
     }
 }
