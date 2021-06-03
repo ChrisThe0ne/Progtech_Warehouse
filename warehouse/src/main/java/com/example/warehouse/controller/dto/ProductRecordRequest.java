@@ -15,7 +15,7 @@ public class ProductRecordRequest {
     private String name;
 
     @NonNull
-    @ApiModelProperty(required = true, example = "Test category")
+    @ApiModelProperty(required = true)
     private Category category;
 
     @NonNull
@@ -27,7 +27,7 @@ public class ProductRecordRequest {
     private int quantity;
 
     @NonNull
-    @ApiModelProperty(required = true, example = "10")
+    @ApiModelProperty(required = true)
     private Supplier supplier;
 
     @NonNull
