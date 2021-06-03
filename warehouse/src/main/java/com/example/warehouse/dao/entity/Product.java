@@ -18,7 +18,8 @@ public class Product {
 
     private String name;
 
-    private String category;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Category category; //category_id mező lesz az adatbázisban
 
     private Integer price;
 
