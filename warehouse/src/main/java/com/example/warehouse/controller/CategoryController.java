@@ -18,8 +18,6 @@ import java.util.*;
 public class CategoryController {
 
     private final CategoryService categoryService;
-    //private final SessionService sessionService;
-    //private final BuyService buyService;
 
     @PostMapping(path = "/addCategory", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
     public void addCategory(CategoryRecordRequest categoryRequest, HttpServletResponse response) throws IOException {
@@ -37,15 +35,4 @@ public class CategoryController {
         categoryService.delete(categoryId);
     }
 
-    /*
-    @PostMapping("/category")
-    private List<ProductRecordRequest> getProductsByCategory(@RequestParam MultiValueMap<String,String> paramMap){
-        return productService.getProductsByCategory(paramMap.get("category").get(0));
-    }
-
-    @PostMapping("/productSearchResult")
-    private List<ProductRecordRequest> getProductsByName(@RequestParam MultiValueMap<String,String> paramMap) {
-        return productService.getProductsByCategory(paramMap.get("name").get(0));
-    }
-    */
 }

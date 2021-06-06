@@ -17,12 +17,6 @@ public class CostumerService implements CostumerServiceInterface{
 
     @Override
     public void addCostumer(CostumerRecordRequest request) {
-        /*
-        Optional.ofNullable(productRepository.getByName(request.getName())).ifPresent(product ->
-                {throw new RuntimeException(String.format("%s termék név már foglalt ", product.getName()));}
-        );
-        */
-
         Costumer costumer = Costumer.addCostumer(request);
         costumerRepository.save(costumer);
     }

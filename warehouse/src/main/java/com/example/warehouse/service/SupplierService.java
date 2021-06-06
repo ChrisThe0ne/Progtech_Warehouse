@@ -17,12 +17,6 @@ public class SupplierService implements SupplierServiceInterface{
 
     @Override
     public void addSupplier(SupplierRecordRequest request) {
-        /*
-        Optional.ofNullable(productRepository.getByName(request.getName())).ifPresent(product ->
-                {throw new RuntimeException(String.format("%s termék név már foglalt ", product.getName()));}
-        );
-        */
-
         Supplier supplier = Supplier.addSupplier(request);
         supplierRepository.save(supplier);
     }
@@ -43,5 +37,7 @@ public class SupplierService implements SupplierServiceInterface{
         Supplier temp = supplierRepository.getSupplierById(supplierId);
         supplierRepository.delete(temp);
     }
+
+
 
 }

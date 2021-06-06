@@ -18,9 +18,4 @@ public interface ProductServiceInterface {
     List<ProductRecordRequest> getProductsByCategory(String category);
 
     void  delete(Integer productId);
-
-    /*
-
-    void addRating(RatingRecordRequest request, User user);
-    */
 }

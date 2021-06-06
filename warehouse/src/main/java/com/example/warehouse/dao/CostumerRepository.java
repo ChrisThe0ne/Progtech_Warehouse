@@ -8,13 +8,10 @@ import java.util.List;
 
 public interface CostumerRepository extends JpaRepository<Costumer, Integer> {
 
-    /*
-    Product getByName(String name);
-
-    List<Product> getAllByCategory(String category);
-    */
     List<Costumer> getAllByNameContaining(String name);
 
     Costumer getCostumerById(Integer costumerId);
+
+    Costumer getCostumerByName(String name);
 
 }

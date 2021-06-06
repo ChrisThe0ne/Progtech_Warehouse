@@ -13,14 +13,5 @@ public interface OrderServiceInterface {
 
     List<Orders> getAllOrders();
 
-    //List<Order> getCostumersByName(String name);
-
-    //List<CategoryRecordRequest> getProductsByCategory(String category);
-
     void  delete(Integer orderId);
-
-    /*
-
-    void addRating(RatingRecordRequest request, User user);
-    */
 }

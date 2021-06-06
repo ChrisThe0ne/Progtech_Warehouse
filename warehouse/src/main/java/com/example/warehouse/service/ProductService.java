@@ -17,11 +17,6 @@ public class ProductService implements ProductServiceInterface{
 
     @Override
     public void addProduct(ProductRecordRequest request) {
-        /*
-        Optional.ofNullable(productRepository.getByName(request.getName())).ifPresent(product ->
-                {throw new RuntimeException(String.format("%s termék név már foglalt ", product.getName()));}
-        );
-        */
 
         Product product = Product.addProduct(request);
         productRepository.save(product);

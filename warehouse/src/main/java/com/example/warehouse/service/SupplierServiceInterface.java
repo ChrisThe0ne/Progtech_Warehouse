@@ -15,13 +15,5 @@ public interface SupplierServiceInterface {
 
     List<Supplier> getSupplierByName(String name);
 
-
-    //List<SupplierRecordRequest> getProductsByCategory(String category);
-
     void  delete(Integer supplierId);
-
-    /*
-
-    void addRating(RatingRecordRequest request, User user);
-    */
 }
