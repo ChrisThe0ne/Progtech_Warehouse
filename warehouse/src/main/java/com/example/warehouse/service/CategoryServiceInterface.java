@@ -15,12 +15,5 @@ public interface CategoryServiceInterface {
 
     List<Category> getCategoriesByName(String name);
 
-    //List<CategoryRecordRequest> getProductsByCategory(String category);
-
     void  delete(Integer categoryId);
-
-    /*
-
-    void addRating(RatingRecordRequest request, User user);
-    */
 }

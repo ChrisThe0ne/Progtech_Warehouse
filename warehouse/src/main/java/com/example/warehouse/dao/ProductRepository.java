@@ -8,11 +8,7 @@ import java.util.List;
 
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
-    /*
-    Product getByName(String name);
 
-    List<Product> getAllByCategory(String category);
-    */
     List<Product> getAllByNameContaining(String name);
 
     Product getProductById(Integer guestId);

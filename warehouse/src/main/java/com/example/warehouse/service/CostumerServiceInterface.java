@@ -15,12 +15,5 @@ public interface CostumerServiceInterface {
 
     List<Costumer> getCostumersByName(String name);
 
-    //List<CategoryRecordRequest> getProductsByCategory(String category);
-
     void  delete(Integer costumerId);
-
-    /*
-
-    void addRating(RatingRecordRequest request, User user);
-    */
 }

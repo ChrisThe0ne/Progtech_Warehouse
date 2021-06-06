@@ -1,6 +1,5 @@
 package com.example.warehouse.controller.dto;
 
-import com.example.warehouse.dao.entity.Category;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 import org.springframework.lang.NonNull;

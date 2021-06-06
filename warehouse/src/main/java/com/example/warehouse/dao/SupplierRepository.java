@@ -8,13 +8,11 @@ import java.util.List;
 
 public interface SupplierRepository extends JpaRepository<Supplier, Integer> {
 
-    /*
-    Product getByName(String name);
 
-    List<Product> getAllByCategory(String category);
-    */
     List<Supplier> getAllByNameContaining(String name);
 
     Supplier getSupplierById(Integer supplierId);
+
+    Supplier getSupplierByName(String name);
 
 }

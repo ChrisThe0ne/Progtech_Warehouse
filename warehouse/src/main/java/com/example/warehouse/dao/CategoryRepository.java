@@ -8,13 +8,10 @@ import java.util.List;
 
 public interface CategoryRepository extends JpaRepository<Category, Integer> {
 
-    /*
-    Product getByName(String name);
-
-    List<Product> getAllByCategory(String category);
-    */
     List<Category> getAllByNameContaining(String name);
 
     Category getCategoryById(Integer categoryId);
+
+    Category getCategoryByName(String name);
 
 }

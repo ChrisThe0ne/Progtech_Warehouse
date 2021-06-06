@@ -17,12 +17,6 @@ public class CategoryService implements CategoryServiceInterface{
 
     @Override
     public void addCategory(CategoryRecordRequest request) {
-        /*
-        Optional.ofNullable(productRepository.getByName(request.getName())).ifPresent(product ->
-                {throw new RuntimeException(String.format("%s termék név már foglalt ", product.getName()));}
-        );
-        */
-
         Category category = Category.addCategory(request);
         categoryRepository.save(category);
     }

@@ -17,12 +17,6 @@ public class OrderService implements OrderServiceInterface{
 
     @Override
     public void addOrder(OrderRecordRequest request) {
-        /*
-        Optional.ofNullable(productRepository.getByName(request.getName())).ifPresent(product ->
-                {throw new RuntimeException(String.format("%s termék név már foglalt ", product.getName()));}
-        );
-        */
-
         Orders orders = Orders.addOrder(request);
         orderRepository.save(orders);
     }
