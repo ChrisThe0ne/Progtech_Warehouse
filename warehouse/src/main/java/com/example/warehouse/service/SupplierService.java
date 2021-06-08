@@ -38,6 +38,4 @@ public class SupplierService implements SupplierServiceInterface{
         supplierRepository.delete(temp);
     }
 
-
-
 }
